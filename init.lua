@@ -84,10 +84,11 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+--vim.opt.runtimepath:append(vim.fn.stdpath 'data' .. '/site/parser')
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.opt.runtimepath:append(vim.fn.stdpath 'data' .. '/site/parser')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -604,7 +605,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -868,8 +869,8 @@ require('lazy').setup({
       --  Check out: https://github.com/nvim-mini/mini.nvim
     end,
   },
-
-  { -- Highlight, edit, and navigate code
+  
+ { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
